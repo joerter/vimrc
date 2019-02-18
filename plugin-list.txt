@@ -3,3 +3,9 @@ git clone https://github.com/Quramy/tsuquyomi.git my_plugins/tsuquyomi
 git clone https://github.com/prettier/vim-prettier my_plugins/vim-prettier vim-prettier
 git clone https://github.com/joshdick/onedark.vim onedark.vim
 https://github.com/vim-syntastic/syntastic/issues/1443
+emmet-vim/
+onedark.vim/
+tsuquyomi/
+typescript-vim/
+vim-fugitive/
+vim-prettier/
