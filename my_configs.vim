@@ -27,3 +27,10 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " Change to IIS directory
 nnoremap <leader>iis :cd C:\fcsamerica\Client\Source\IIS<CR>
+
+" ALE
+" g:ale_fix_on_save
+let g:ale_fixers = {'typescript': ['trim_whitespace', 'remove_trailing_lines', 'tslint']}
+
+colorscheme onedark
+let g:lightline = { 'colorscheme': 'onedark' }
