@@ -1,0 +1,27 @@
+snippet desc "describe block"
+	describe('${1:description}', () => {
+		$0
+	});
+
+
+snippet it "it block"
+	it('${1:description}', () => {
+		$0
+	});
+
+snippet bef "before each block"
+	beforeEach(() => {
+		$0
+	});
+
+
+snippet ng-test
+	describe('${1:testname}', () => {
+		let ${2:variablename}: ${3:classname};
+
+		beforeEach(() => {
+			${2:variablename} = new ${3:classname}();
+		});
+
+		$0
+	});
