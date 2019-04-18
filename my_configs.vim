@@ -30,6 +30,11 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " g:ale_fix_on_save
 let g:ale_fixers = {'typescript': ['trim_whitespace', 'remove_trailing_lines', 'tslint']}
 
+" nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeWinPos = "left"
+
+" colors
 if (has("autocmd"))
   augroup colorextend
     autocmd!
@@ -42,16 +47,22 @@ if (has("autocmd"))
     " autocmd ColorScheme * call onedark#extend_highlight("Identifier", { "bg": { "gui": "#333333" } })
   augroup END
 endif
+
 colorscheme onedark
 let g:lightline = { 'colorscheme': 'onedark' }
 
+" ignore for fuzzy find
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\bin\\*,*\\packages\\*,*\\obj\\*
 
+" override snipmate trigger
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
-" nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeWinPos = "left"
-
+" ctrl-space to trigger omni completion
 inoremap <C-space> <C-X><C-O>
+
+" Folds
+set foldmethod=syntax "syntax highlighting items specify folds
+set foldcolumn=0
+let javaScript_fold=1 "activate folding by JS syntax
+set foldlevelstart=99 "start file with all folds opened
